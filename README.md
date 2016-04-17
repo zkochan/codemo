@@ -8,8 +8,8 @@
 
 <!--@shields.flatSquare('npm', 'travis', 'coveralls')-->
 [![NPM version](https://img.shields.io/npm/v/codemo.svg?style=flat-square)](https://www.npmjs.com/package/codemo)
-[![Build status](https://img.shields.io/travis/zkochan/codemo.svg?style=flat-square)](https://travis-ci.org/zkochan/codemo)
-[![Test coverage](https://img.shields.io/coveralls/zkochan/codemo.svg?style=flat-square)](https://coveralls.io/r/zkochan/codemo?branch=master)
+[![Build status for master](https://img.shields.io/travis/zkochan/codemo/master.svg?style=flat-square)](https://travis-ci.org/zkochan/codemo)
+[![Test coverage for master](https://img.shields.io/coveralls/zkochan/codemo/master.svg?style=flat-square)](https://coveralls.io/r/zkochan/codemo?branch=master)
 <!--/@-->
 
 <!--@installation()-->
@@ -63,7 +63,7 @@ Return a promise with the resulting file combined with output.
 * * *
 
 <!--@dependencies({ shield: 'flat-square' })-->
-## Dependencies [![Dependency status](https://img.shields.io/david/zkochan/codemo.svg?style=flat-square)](https://david-dm.org/zkochan/codemo)
+## Dependencies [![Dependency status for master](https://img.shields.io/david/zkochan/codemo/master.svg?style=flat-square)](https://david-dm.org/zkochan/codemo/master)
 
 - [acorn](https://github.com/ternjs/acorn): ECMAScript parser
 - [callsites](https://github.com/sindresorhus/callsites): Get callsites from the V8 stack trace API
@@ -79,7 +79,7 @@ Return a promise with the resulting file combined with output.
 <!--/@-->
 
 <!--@devDependencies({ shield: 'flat-square' })-->
-## Dev Dependencies [![devDependency status](https://img.shields.io/david/dev/zkochan/codemo.svg?style=flat-square)](https://david-dm.org/zkochan/codemo#info=devDependencies)
+## Dev Dependencies [![devDependency status for master](https://img.shields.io/david/dev/zkochan/codemo/master.svg?style=flat-square)](https://david-dm.org/zkochan/codemo/master#info=devDependencies)
 
 - [chai](https://github.com/chaijs/chai): BDD/TDD assertion library for node.js and the browser. Test framework agnostic.
 - [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog): Commitizen adapter following the conventional-changelog format.
