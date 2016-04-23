@@ -43,6 +43,7 @@
     "callsites": "1.0.0",
     "cross-spawn-async": "2.2.2",
     "file-position": "0.0.0",
+    "lodash.partition": "^4.3.0",
     "normalize-newline": "2.0.0",
     "normalize-path": "2.0.1",
     "rollup": "0.25.8",

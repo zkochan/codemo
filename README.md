@@ -69,6 +69,7 @@ Return a promise with the resulting file combined with output.
 - [callsites](https://github.com/sindresorhus/callsites): Get callsites from the V8 stack trace API
 - [cross-spawn-async](https://github.com/IndigoUnited/node-cross-spawn-async): Cross platform child_process#spawn
 - [file-position](https://github.com/hughsk/file-position): Given a row/column number, return the index of that character within the whole string
+- [lodash.partition](https://github.com/lodash/lodash): The lodash method `_.partition` exported as a module.
 - [normalize-newline](https://github.com/sindresorhus/normalize-newline): Normalize the newline characters in a string to `\n`
 - [normalize-path](https://github.com/jonschlinkert/normalize-path): Normalize file path slashes to be unix-like forward slashes. Also condenses repeat slashes to a single slash and removes and trailing slashes.
 - [rollup](https://github.com/rollup/rollup): Next-generation ES6 module bundler
