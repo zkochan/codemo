@@ -72,6 +72,7 @@ Return a promise with the resulting file combined with output.
 - [lodash.partition](https://github.com/lodash/lodash): The lodash method `_.partition` exported as a module.
 - [normalize-newline](https://github.com/sindresorhus/normalize-newline): Normalize the newline characters in a string to `\n`
 - [normalize-path](https://github.com/jonschlinkert/normalize-path): Normalize file path slashes to be unix-like forward slashes. Also condenses repeat slashes to a single slash and removes and trailing slashes.
+- [promise.prototype.finally](https://github.com/matthew-andrews/Promise.prototype.finally): A polyfill for Promise.prototype.finally for ES6 compliant promises
 - [rollup](https://github.com/rollup/rollup): Next-generation ES6 module bundler
 - [rollup-plugin-babel](https://github.com/rollup/rollup-plugin-babel): Seamless integration between Rollup and Babel.
 - [rollup-plugin-includepaths](https://github.com/dot-build/rollup-plugin-includepaths): Rollup plugin to use relative paths in your project files
@@ -92,6 +93,7 @@ Return a promise with the resulting file combined with output.
 - [istanbul](https://github.com/gotwarlost/istanbul): Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests. Supports all JS coverage use cases including unit tests, server side functional tests
 - [mocha](https://github.com/mochajs/mocha): simple, flexible, fun test framework
 - [mos](https://github.com/zkochan/mos): A pluggable module that injects content into your markdown files via hidden JavaScript snippets
+- [promise.prototype.finally](https://github.com/matthew-andrews/Promise.prototype.finally): A polyfill for Promise.prototype.finally for ES6 compliant promises
 - [semantic-release](https://github.com/semantic-release/semantic-release): automated semver compliant package publishing
 - [validate-commit-msg](https://github.com/kentcdodds/validate-commit-msg): Script to validate a commit message follows the conventional changelog standard
 
