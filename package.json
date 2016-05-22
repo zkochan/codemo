@@ -3,23 +3,27 @@
   "version": "0.0.0-placeholder",
   "description": "Embeds console output to the code",
   "engines": {
-    "node": ">=4"
+    "node": ">=0.10"
   },
   "files": [
-    "index.js",
-    "lib"
+    "src/",
+    "dist/"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
-    "test": "mocha && npm run lint && mos test",
-    "lint": "eslint lib/**/*.js example/**/*.js index.js",
+    "test-es5": "mocha --compilers js:babel-register && npm run lint",
+    "test": "npm run test-es5 && mos test",
+    "lint": "eslint src/**/*.js example/",
     "commit": "git-cz",
-    "coverage": "istanbul cover -x \"**/*.spec.js\" node_modules/mocha/bin/_mocha -- -R spec",
-    "precoveralls": "istanbul cover -x \"**/*.spec.js\" node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && npm i coveralls@2",
+    "coverage": "istanbul cover -x \"**/*.spec.js\" node_modules/mocha/bin/_mocha -- --compilers js:babel-register -R spec",
+    "precoveralls": "istanbul cover -x \"**/*.spec.js\" node_modules/mocha/bin/_mocha --report lcovonly -- --compilers js:babel-register -R spec && npm i coveralls@2",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "postcoveralls": "rm -rf ./coverage",
     "md": "mos",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "transpile": "babel src --out-dir dist",
+    "prepublish": "npm run transpile"
   },
   "repository": {
     "type": "git",
@@ -40,6 +44,7 @@
   "homepage": "https://github.com/zkochan/codemo#readme",
   "dependencies": {
     "acorn": "3.0.4",
+    "babel-runtime": "^6.9.0",
     "callsites": "1.0.0",
     "cross-spawn-async": "2.2.2",
     "file-position": "0.0.0",
@@ -53,7 +58,13 @@
     "source-map": "0.5.3"
   },
   "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.9.0",
     "chai": "^3.4.1",
+    "core-js": "^2.4.0",
     "cz-conventional-changelog": "1.1.5",
     "eslint": "2.8.0",
     "eslint-config-standard": "5.1.0",

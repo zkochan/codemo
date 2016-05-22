@@ -66,6 +66,7 @@ Return a promise with the resulting file combined with output.
 ## Dependencies [![Dependency status for master](https://img.shields.io/david/zkochan/codemo/master.svg?style=flat-square)](https://david-dm.org/zkochan/codemo/master)
 
 - [acorn](https://github.com/ternjs/acorn): ECMAScript parser
+- [babel-runtime](https://github.com/babel/babel/blob/master/packages): babel selfContained runtime
 - [callsites](https://github.com/sindresorhus/callsites): Get callsites from the V8 stack trace API
 - [cross-spawn-async](https://github.com/IndigoUnited/node-cross-spawn-async): Cross platform child_process#spawn
 - [file-position](https://github.com/hughsk/file-position): Given a row/column number, return the index of that character within the whole string
@@ -83,7 +84,13 @@ Return a promise with the resulting file combined with output.
 <!--@devDependencies({ shield: 'flat-square' })-->
 ## Dev Dependencies [![devDependency status for master](https://img.shields.io/david/dev/zkochan/codemo/master.svg?style=flat-square)](https://david-dm.org/zkochan/codemo/master#info=devDependencies)
 
+- [babel-cli](https://github.com/babel/babel/blob/master/packages): Babel command line.
+- [babel-plugin-add-module-exports](https://github.com/59naga/babel-plugin-add-module-exports): Fix babel/babel#2212
+- [babel-plugin-transform-runtime](https://github.com/babel/babel/blob/master/packages): Externalise references to helpers and builtins, automatically polyfilling your code without polluting globals
+- [babel-preset-es2015](https://github.com/babel/babel/blob/master/packages): Babel preset for all es2015 plugins.
+- [babel-register](https://github.com/babel/babel/blob/master/packages): babel require hook
 - [chai](https://github.com/chaijs/chai): BDD/TDD assertion library for node.js and the browser. Test framework agnostic.
+- [core-js](https://github.com/zloirock/core-js): Standard library
 - [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog): Commitizen adapter following the conventional-changelog format.
 - [eslint](https://github.com/eslint/eslint): An AST-based pattern checker for JavaScript.
 - [eslint-config-standard](https://github.com/feross/eslint-config-standard): JavaScript Standard Style - ESLint Shareable Config

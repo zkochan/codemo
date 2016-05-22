@@ -2,6 +2,7 @@
 const describe = require('mocha').describe
 const it = require('mocha').it
 const expect = require('chai').expect
+import 'core-js/fn/array/fill'
 const stdoutToDemo = require('./stdout-to-demo')
 
 describe('stdoutToDemo', () => {
@@ -13,9 +14,9 @@ describe('stdoutToDemo', () => {
   })
 
   it('should add the console output to the comments when the code executed asynchronously', () => {
-    return stdoutToDemo('setTimeout(() => console.log("Hello world!"), 0)')
+    return stdoutToDemo('setTimeout(function () { console.log("Hello world!") }, 0)')
       .then(actual =>
-        expect(actual).to.eq('setTimeout(() => console.log("Hello world!"), 0)\n//> Hello world!')
+        expect(actual).to.eq('setTimeout(function () { console.log("Hello world!") }, 0)\n//> Hello world!')
       )
   })
 
@@ -31,9 +32,9 @@ describe('stdoutToDemo', () => {
   })
 
   it('should add several console outputs printed by the same line to the comments', () => {
-    return stdoutToDemo('"use strict";for (let i = 3; i--;) console.log("Hello world!")')
+    return stdoutToDemo('"use strict";for (var i = 3; i--;) console.log("Hello world!")')
       .then(actual =>
-        expect(actual).to.eq('"use strict";for (let i = 3; i--;) console.log("Hello world!")\n//> Hello world!\n//> Hello world!\n//> Hello world!')
+        expect(actual).to.eq('"use strict";for (var i = 3; i--;) console.log("Hello world!")\n//> Hello world!\n//> Hello world!\n//> Hello world!')
       )
   })
 
@@ -191,13 +192,13 @@ describe('stdoutToDemo', () => {
 
   it('should add earlier output even if it was printed later', done => {
     return stdoutToDemo([
-      'setTimeout(() => console.log("1Hello world!"), 1)',
+      'setTimeout(function () {console.log("1Hello world!")}, 1)',
       '',
       'console.log("2Hello world!")',
     ].join('\n'))
     .then(actual => {
       expect(actual).to.eq([
-        'setTimeout(() => console.log("1Hello world!"), 1)',
+        'setTimeout(function () {console.log("1Hello world!")}, 1)',
         '//> 1Hello world!',
         '',
         'console.log("2Hello world!")',

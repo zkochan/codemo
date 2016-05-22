@@ -1,3 +1,3 @@
 'use strict'
-const fooBar = require('./')
+var fooBar = require('./index')
 console.log(fooBar)

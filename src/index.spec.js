@@ -2,7 +2,7 @@
 const describe = require('mocha').describe
 const it = require('mocha').it
 const expect = require('chai').expect
-const codemo = require('.')
+const codemo = require('./index')
 const path = require('path')
 
 describe('codemo', () => {
@@ -24,7 +24,7 @@ describe('codemo', () => {
       .then(actual => {
         expect(actual).to.eq([
           '\'use strict\'',
-          'const fooBar = require(\'./\')',
+          'var fooBar = require(\'./index\')',
           'console.log(fooBar)',
           '//> Hello world!',
           '',
@@ -36,7 +36,7 @@ describe('codemo', () => {
     return codemo.processFile(path.resolve(__dirname, './test/import-example/example.js'), {es6: true})
       .then(actual => {
         expect(actual).to.eq([
-          "import fooBar from '.'",
+          "import fooBar from './index'",
           'console.log(fooBar)',
           '//> Hello world!',
           '',
@@ -49,7 +49,7 @@ describe('codemo', () => {
       .then(actual => {
         expect(actual).to.eq([
           "'use strict'",
-          "const s = 'Hello world!'",
+          "var s = 'Hello world!'",
           'console.log(s)',
           '//> Hello world!',
           '',

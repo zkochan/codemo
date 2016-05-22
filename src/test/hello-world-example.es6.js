@@ -1,3 +1,3 @@
 'use strict'
-const s = 'Hello world!'
+var s = 'Hello world!'
 console.log(s)
