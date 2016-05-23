@@ -1,26 +1,20 @@
-<!--@'# ' + package.name-->
+<!--@'# ' + pkg.name-->
 # codemo
 <!--/@-->
 
-<!--@'> ' + package.description-->
+<!--@'> ' + pkg.description-->
 > Embeds console output to the code
 <!--/@-->
 
 <!--@shields.flatSquare('npm', 'travis', 'coveralls')-->
-[![NPM version](https://img.shields.io/npm/v/codemo.svg?style=flat-square)](https://www.npmjs.com/package/codemo)
-[![Build status for master](https://img.shields.io/travis/zkochan/codemo/master.svg?style=flat-square)](https://travis-ci.org/zkochan/codemo)
-[![Test coverage for master](https://img.shields.io/coveralls/zkochan/codemo/master.svg?style=flat-square)](https://coveralls.io/r/zkochan/codemo?branch=master)
+[![npm version](https://img.shields.io/npm/v/codemo.svg?style=flat-square)](https://www.npmjs.com/package/codemo) [![Build Status](https://img.shields.io/travis/zkochan/codemo/master.svg?style=flat-square)](https://travis-ci.org/zkochan/codemo) [![Coverage Status](https://img.shields.io/coveralls/zkochan/codemo/master.svg?style=flat-square)](https://coveralls.io/r/zkochan/codemo?branch=master)
 <!--/@-->
 
-<!--@installation()-->
 ## Installation
 
-This module is installed via npm:
-
-``` sh
-npm install codemo --save
+```sh
+npm i -S codemo
 ```
-<!--/@-->
 
 ## Usage
 
@@ -54,16 +48,14 @@ Return a promise with the resulting file combined with output.
 
 - `opts.es6` - whether the code is written using ES6
 
-<!--@license()-->
 ## License
 
 [MIT](./LICENSE) © [Zoltan Kochan](http://kochan.io)
-<!--/@-->
 
 * * *
 
 <!--@dependencies({ shield: 'flat-square' })-->
-## Dependencies [![Dependency status for master](https://img.shields.io/david/zkochan/codemo/master.svg?style=flat-square)](https://david-dm.org/zkochan/codemo/master)
+## <a name="dependencies">Dependencies</a> [![dependency status](https://img.shields.io/david/zkochan/codemo/master.svg?style=flat-square)](https://david-dm.org/zkochan/codemo/master)
 
 - [acorn](https://github.com/ternjs/acorn): ECMAScript parser
 - [babel-runtime](https://github.com/babel/babel/blob/master/packages): babel selfContained runtime
@@ -82,7 +74,7 @@ Return a promise with the resulting file combined with output.
 <!--/@-->
 
 <!--@devDependencies({ shield: 'flat-square' })-->
-## Dev Dependencies [![devDependency status for master](https://img.shields.io/david/dev/zkochan/codemo/master.svg?style=flat-square)](https://david-dm.org/zkochan/codemo/master#info=devDependencies)
+## <a name="dev-dependencies">Dev Dependencies</a> [![devDependency status](https://img.shields.io/david/dev/zkochan/codemo/master.svg?style=flat-square)](https://david-dm.org/zkochan/codemo/master#info=devDependencies)
 
 - [babel-cli](https://github.com/babel/babel/blob/master/packages): Babel command line.
 - [babel-plugin-add-module-exports](https://github.com/59naga/babel-plugin-add-module-exports): Fix babel/babel#2212
@@ -99,7 +91,7 @@ Return a promise with the resulting file combined with output.
 - [ghooks](https://github.com/gtramontina/ghooks): Simple git hooks
 - [istanbul](https://github.com/gotwarlost/istanbul): Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests. Supports all JS coverage use cases including unit tests, server side functional tests
 - [mocha](https://github.com/mochajs/mocha): simple, flexible, fun test framework
-- [mos](https://github.com/zkochan/mos): A pluggable module that injects content into your markdown files via hidden JavaScript snippets
+- [mos](https://github.com/mosjs/mos): A pluggable module that injects content into your markdown files via hidden JavaScript snippets
 - [promise.prototype.finally](https://github.com/matthew-andrews/Promise.prototype.finally): A polyfill for Promise.prototype.finally for ES6 compliant promises
 - [semantic-release](https://github.com/semantic-release/semantic-release): automated semver compliant package publishing
 - [validate-commit-msg](https://github.com/kentcdodds/validate-commit-msg): Script to validate a commit message follows the conventional changelog standard

@@ -12,8 +12,7 @@
   "main": "dist/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
-    "test-es5": "mocha --compilers js:babel-register && npm run lint",
-    "test": "npm run test-es5 && mos test",
+    "test": "mocha --compilers js:babel-register && npm run lint && mos test",
     "lint": "eslint src/**/*.js example/",
     "commit": "git-cz",
     "coverage": "istanbul cover -x \"**/*.spec.js\" node_modules/mocha/bin/_mocha -- --compilers js:babel-register -R spec",
@@ -42,6 +41,11 @@
     "url": "https://github.com/zkochan/codemo/issues"
   },
   "homepage": "https://github.com/zkochan/codemo#readme",
+  "mos": {
+    "installation": {
+      "useShortAlias": true
+    }
+  },
   "dependencies": {
     "acorn": "3.0.4",
     "babel-runtime": "^6.9.0",
@@ -73,7 +77,7 @@
     "ghooks": "1.2.1",
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
-    "mos": "0.11.1",
+    "mos": "^1.2.0",
     "promise.prototype.finally": "^1.0.1",
     "semantic-release": "^4.3.5",
     "validate-commit-msg": "2.6.0"

@@ -13,9 +13,6 @@ before_install:
 install:
   - npm install
 
-script:
-  - if [[ $TRAVIS_NODE_VERSION == "v0.10" ]]; then npm run test-es5; fi;
-  - if [[ $TRAVIS_NODE_VERSION != "v0.10" ]]; then npm run test; fi;
 after_success:
   - npm run coveralls
   - npm run semantic-release
