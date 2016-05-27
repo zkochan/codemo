@@ -1,15 +1,12 @@
-'use strict'
-module.exports = consoleStringify
+import removeLastEOL from './remove-last-eol'
 
-const removeLastEOL = require('./remove-last-eol')
-
-function consoleStringify () {
+export default function consoleStringify (...args) {
   const originalWrite = process.stdout.write
 
   let message
   process.stdout.write = msg => { message = msg }
 
-  console.log.apply(console, arguments)
+  console.log(...args)
 
   process.stdout.write = originalWrite
 

@@ -1,2 +1,1 @@
-'use strict'
-require('./merge-code-with-demo')
+import {} from './merge-code-with-demo'

@@ -1,17 +1,14 @@
-'use strict'
-const describe = require('mocha').describe
-const it = require('mocha').it
-const expect = require('chai').expect
-const codemo = require('./index')
-const path = require('path')
+import {describe, it} from 'mocha'
+import {expect} from 'chai'
+import {processFile} from './'
+import path from 'path'
 
 describe('codemo', () => {
   it('should generate example from a file', () => {
-    return codemo
-      .processFile(path.resolve(__dirname, './test/hello-world-example.js'))
+    return processFile(path.resolve(__dirname, './test/hello-world-example.js'))
       .then(actual => {
         expect(actual).to.eq([
-          'console.log(\'Hello world!\')',
+          "console.log('Hello world!')",
           '//> Hello world!',
           '',
         ].join('\n'))
@@ -19,12 +16,11 @@ describe('codemo', () => {
   })
 
   it('should work with requires', () => {
-    return codemo
-      .processFile(path.resolve(__dirname, './test/require-example/example.js'))
+    return processFile(path.resolve(__dirname, './test/require-example/example.js'))
       .then(actual => {
         expect(actual).to.eq([
-          '\'use strict\'',
-          'var fooBar = require(\'./index\')',
+          "'use strict'",
+          "var fooBar = require('./index')",
           'console.log(fooBar)',
           '//> Hello world!',
           '',
@@ -33,7 +29,7 @@ describe('codemo', () => {
   })
 
   it('should work with imports', () => {
-    return codemo.processFile(path.resolve(__dirname, './test/import-example/example.js'), {es6: true})
+    return processFile(path.resolve(__dirname, './test/import-example/example.js'), {es6: true})
       .then(actual => {
         expect(actual).to.eq([
           "import fooBar from './index'",
@@ -45,7 +41,7 @@ describe('codemo', () => {
   })
 
   it('should generate example from an es6 file', () => {
-    return codemo.processFile(path.resolve(__dirname, './test/hello-world-example.es6.js'), {es6: true})
+    return processFile(path.resolve(__dirname, './test/hello-world-example.es6.js'), {es6: true})
       .then(actual => {
         expect(actual).to.eq([
           "'use strict'",

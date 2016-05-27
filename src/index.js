@@ -1,16 +1,11 @@
-'use strict'
-module.exports = {
-  process: codemoProcess,
-  processFile,
-}
+import path from 'path'
+import stdoutToDemo from './stdout-to-demo'
+import fs from 'fs'
+import rollup from 'rollup'
+import babel from 'rollup-plugin-babel'
+import includePaths from 'rollup-plugin-includepaths'
 
-const path = require('path')
-const stdoutToDemo = require('./stdout-to-demo')
-const fs = require('fs')
-const rollup = require('rollup')
-const babel = require('rollup-plugin-babel')
-const includePaths = require('rollup-plugin-includepaths')
-
+export { codemoProcess as process }
 function codemoProcess (code, opts) {
   opts = opts || {}
   const cwd = opts.cwd || process.cwd()
@@ -47,7 +42,7 @@ function codemoProcess (code, opts) {
   })
 }
 
-function processFile (filePath, opts) {
+export function processFile (filePath, opts) {
   opts = opts || {}
 
   if (!opts.es6) {
@@ -77,7 +72,5 @@ function processFile (filePath, opts) {
     format: 'cjs',
     sourceMap: true,
   }))
-  .then(result => stdoutToDemo(Object.assign({}, result, {
-    cwd: path.dirname(filePath),
-  })))
+  .then(result => stdoutToDemo({...result, cwd: path.dirname(filePath)}))
 }

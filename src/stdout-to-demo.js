@@ -1,12 +1,9 @@
-'use strict'
-module.exports = stdoutToDemo
+import {SourceMapConsumer} from 'source-map'
+import normalizeNewline from 'normalize-newline'
+import getOutputs from './get-outputs'
+import mergeCodeWithDemo from './merge-code-with-demo'
 
-const SourceMapConsumer = require('source-map').SourceMapConsumer
-const normalizeNewline = require('normalize-newline')
-const getOutputs = require('./get-outputs')
-const mergeCodeWithDemo = require('./merge-code-with-demo')
-
-function stdoutToDemo (opts) {
+export default function stdoutToDemo (opts) {
   if (typeof opts === 'string') opts = { code: opts }
   opts.cwd = opts.cwd || process.cwd()
   opts.code = normalizeNewline(opts.code)
@@ -21,10 +18,13 @@ function stdoutToDemo (opts) {
       }
       const consumer = new SourceMapConsumer(opts.map)
       const originalOutputs = outputs
-        .map(output => Object.assign({}, output, consumer.originalPositionFor({
-          line: output.line,
-          column: output.column,
-        })))
+        .map(output => ({
+          ...output,
+          ...consumer.originalPositionFor({
+            line: output.line,
+            column: output.column,
+          }),
+        }))
       const sourcesContent = JSON.parse(opts.map).sourcesContent
       const sourceContent = sourcesContent[sourcesContent.length - 1]
       return mergeCodeWithDemo({

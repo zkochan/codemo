@@ -1,13 +1,10 @@
-'use strict'
-module.exports = mergeCodeWithDemo
+import consoleStringify from './console-stringify'
+import partition from 'lodash.partition'
+import * as acorn from 'acorn'
+import * as walk from 'acorn/dist/walk'
+import position from 'file-position'
 
-const consoleStringify = require('./console-stringify')
-const partition = require('lodash.partition')
-const acorn = require('acorn')
-const walk = require('acorn/dist/walk')
-const position = require('file-position')
-
-function mergeCodeWithDemo (opts) {
+export default function mergeCodeWithDemo (opts) {
   const codeLines = splitIntoLines(opts.code)
   const sOutputs = moveOutputsBeloveStatement(opts.outputs, codeLines, opts.code)
 
@@ -17,11 +14,13 @@ function mergeCodeWithDemo (opts) {
     const lineOutputs = partResult[0]
     return {
       outputs: partResult[1],
-      codeLines: acc.codeLines
-        .concat(line)
-        .concat(outputsToDemo(lineOutputs, {
+      codeLines: [
+        ...acc.codeLines,
+        line,
+        ...outputsToDemo(lineOutputs, {
           prevLine: line,
-        })),
+        }),
+      ],
     }
   }, {
     codeLines: [],
@@ -36,7 +35,7 @@ function outputsToDemo (lineOutputs, opts) {
   const prevLinePadding = getLinePadding(opts.prevLine)
   return lineOutputs
     .map(lineOutput => lineOutput.args)
-    .map(outputArgs => consoleStringify.apply(null, outputArgs))
+    .map(outputArgs => consoleStringify(...outputArgs))
     .map(output => outputToDemo(output, {
       prevLinePadding,
     }))
@@ -59,13 +58,13 @@ function moveOutputsBeloveStatement (outputs, codeLines, content) {
   return outputs.reduce((semanticOutput, output) => {
     const pos = getPosition(output.line - 1, output.column)
     const semanticLineNo = outputSemanticPosition(ast, pos)
-    return semanticOutput.concat(Object.assign(
-      {},
-      output,
+    return [
+      ...semanticOutput,
       {
+        ...output,
         line: semanticLineNo,
-      }
-    ))
+      },
+    ]
   }, [])
 }
 

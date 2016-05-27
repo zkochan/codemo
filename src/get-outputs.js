@@ -1,13 +1,10 @@
-'use strict'
-module.exports = getOutputs
+import fs from 'fs'
+import spawn from 'cross-spawn-async'
+import path from 'path'
+import normalizePath from 'normalize-path'
+import hookConsoleLog from './hook-console-log'
 
-const fs = require('fs')
-const spawn = require('cross-spawn-async')
-const path = require('path')
-const normalizePath = require('normalize-path')
-const hookConsoleLog = require('./hook-console-log')
-
-function getOutputs (opts) {
+export default function getOutputs (opts) {
   const tmpFileName = normalizePath(path.resolve(opts.cwd, `_${Math.random()}.js`))
   fs.writeFileSync(tmpFileName, hookConsoleLog.addHook({
     code: opts.code,

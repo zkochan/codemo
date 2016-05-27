@@ -1,2 +1,1 @@
-'use strict'
-require('./get-outputs')
+import {} from './get-outputs'
