@@ -45,7 +45,7 @@ function trace () {
 
 function addHook (opts) {
   return useStrictToBeginning(
-    "require('" + __filename + "')('" + opts.filePath + "', {lineOffset: 1});\n" + opts.code // eslint-disable-line no-path-concat
+    "require('" + normalizePath(__filename) + "')('" + opts.filePath + "', {lineOffset: 1});\n" + opts.code // eslint-disable-line no-path-concat
   )
 }
 
