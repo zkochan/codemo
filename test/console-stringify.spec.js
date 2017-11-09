@@ -2,7 +2,7 @@
 const describe = require('mocha').describe
 const it = require('mocha').it
 const expect = require('chai').expect
-const consoleStringify = require('./console-stringify')
+const consoleStringify = require('codemo/lib/console-stringify')
 
 describe('consoleStringify', () => {
   it('should stringify number', () => {

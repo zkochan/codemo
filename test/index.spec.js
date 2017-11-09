@@ -2,7 +2,7 @@
 const describe = require('mocha').describe
 const it = require('mocha').it
 const expect = require('chai').expect
-const codemo = require('./index')
+const codemo = require('codemo')
 const path = require('path')
 
 describe('codemo', () => {

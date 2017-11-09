@@ -2,8 +2,7 @@
 const describe = require('mocha').describe
 const it = require('mocha').it
 const expect = require('chai').expect
-import 'core-js/fn/array/fill'
-const stdoutToDemo = require('./stdout-to-demo')
+const stdoutToDemo = require('codemo/lib/stdout-to-demo')
 
 describe('stdoutToDemo', () => {
   it('should add the console output to the comments', () => {
