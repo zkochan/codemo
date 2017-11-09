@@ -50,4 +50,4 @@ Return a promise with the resulting file combined with output.
 
 ## License
 
-[MIT](./LICENSE) © [Zoltan Kochan](http://kochan.io)
+[MIT](./LICENSE) © [Zoltan Kochan](https://www.kochan.io)
