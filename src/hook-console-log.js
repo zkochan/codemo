@@ -35,8 +35,9 @@ function callsiteForFile (fileName) {
 
 function trace () {
   return callsites().map(function (callsite) {
+    var fn = callsite.getFileName()
     return {
-      file: normalizePath(callsite.getFileName()) || '?',
+      file: fn && normalizePath(fn) || '?',
       line: callsite.getLineNumber(),
       column: callsite.getColumnNumber(),
     }
