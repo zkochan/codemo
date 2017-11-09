@@ -50,7 +50,6 @@
     "lodash.partition": "^4.3.0",
     "normalize-newline": "^3.0.0",
     "normalize-path": "^2.1.1",
-    "promise.prototype.finally": "^1.0.1",
     "rollup": "^0.51.2",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-includepaths": "^0.2.2",
@@ -71,7 +70,6 @@
     "mocha": "^4.0.1",
     "mos": "^1.2.0",
     "package-preview": "^1.0.0",
-    "promise.prototype.finally": "^1.0.1",
     "validate-commit-msg": "2.6.0"
   },
   "config": {
