@@ -189,7 +189,7 @@ describe('stdoutToDemo', () => {
       })
   })
 
-  it('should add earlier output even if it was printed later', done => {
+  it('should add earlier output even if it was printed later', () => {
     return stdoutToDemo([
       'setTimeout(function () {console.log("1Hello world!")}, 1)',
       '',
@@ -203,8 +203,6 @@ describe('stdoutToDemo', () => {
         'console.log("2Hello world!")',
         '//> 2Hello world!',
       ].join('\n'))
-      done()
     })
-    .catch(done)
   })
 })
