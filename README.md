@@ -58,7 +58,7 @@ Return a promise with the resulting file combined with output.
 ## <a name="dependencies">Dependencies</a> [![dependency status](https://img.shields.io/david/zkochan/codemo/master.svg?style=flat-square)](https://david-dm.org/zkochan/codemo/master)
 
 - [acorn](https://github.com/ternjs/acorn): ECMAScript parser
-- [babel-runtime](https://github.com/babel/babel/blob/master/packages): babel selfContained runtime
+- [babel-runtime](https://github.com/babel/babel/tree/master/packages/babel-runtime): babel selfContained runtime
 - [callsites](https://github.com/sindresorhus/callsites): Get callsites from the V8 stack trace API
 - [cross-spawn-async](https://github.com/IndigoUnited/node-cross-spawn-async): Cross platform child_process#spawn
 - [file-position](https://github.com/hughsk/file-position): Given a row/column number, return the index of that character within the whole string
@@ -76,11 +76,11 @@ Return a promise with the resulting file combined with output.
 <!--@devDependencies({ shield: 'flat-square' })-->
 ## <a name="dev-dependencies">Dev Dependencies</a> [![devDependency status](https://img.shields.io/david/dev/zkochan/codemo/master.svg?style=flat-square)](https://david-dm.org/zkochan/codemo/master#info=devDependencies)
 
-- [babel-cli](https://github.com/babel/babel/blob/master/packages): Babel command line.
+- [babel-cli](https://github.com/babel/babel/tree/master/packages/babel-cli): Babel command line.
 - [babel-plugin-add-module-exports](https://github.com/59naga/babel-plugin-add-module-exports): Fix babel/babel#2212
-- [babel-plugin-transform-runtime](https://github.com/babel/babel/blob/master/packages): Externalise references to helpers and builtins, automatically polyfilling your code without polluting globals
-- [babel-preset-es2015](https://github.com/babel/babel/blob/master/packages): Babel preset for all es2015 plugins.
-- [babel-register](https://github.com/babel/babel/blob/master/packages): babel require hook
+- [babel-plugin-transform-runtime](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-runtime): Externalise references to helpers and builtins, automatically polyfilling your code without polluting globals
+- [babel-preset-es2015](https://github.com/babel/babel/tree/master/packages/babel-preset-es2015): Babel preset for all es2015 plugins.
+- [babel-register](https://github.com/babel/babel/tree/master/packages/babel-register): babel require hook
 - [chai](https://github.com/chaijs/chai): BDD/TDD assertion library for node.js and the browser. Test framework agnostic.
 - [core-js](https://github.com/zloirock/core-js): Standard library
 - [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog): Commitizen adapter following the conventional-changelog format.
@@ -89,7 +89,7 @@ Return a promise with the resulting file combined with output.
 - [eslint-plugin-promise](https://github.com/xjamundx/eslint-plugin-promise): Enforce best practices for JavaScript promises
 - [eslint-plugin-standard](https://github.com/xjamundx/eslint-plugin-standard): ESlint Plugin for the Standard Linter
 - [ghooks](https://github.com/gtramontina/ghooks): Simple git hooks
-- [istanbul](https://github.com/gotwarlost/istanbul): Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests. Supports all JS coverage use cases including unit tests, server side functional tests
+- [istanbul](https://github.com/gotwarlost/istanbul): Yet another JS code coverage tool that computes statement, line, function and branch coverage with module loader hooks to transparently add coverage when running tests. Supports all JS coverage use cases including unit tests, server side functional tests and browser tests. Built for scale
 - [mocha](https://github.com/mochajs/mocha): simple, flexible, fun test framework
 - [mos](https://github.com/mosjs/mos): A pluggable module that injects content into your markdown files via hidden JavaScript snippets
 - [promise.prototype.finally](https://github.com/matthew-andrews/Promise.prototype.finally): A polyfill for Promise.prototype.finally for ES6 compliant promises
