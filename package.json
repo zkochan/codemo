@@ -1,6 +1,6 @@
 {
   "name": "codemo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Embeds console output to the code",
   "engines": {
     "node": ">=4"
