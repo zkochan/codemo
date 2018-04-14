@@ -45,7 +45,7 @@
     "acorn": "^5.2.1",
     "babel-core": "^6.26.0",
     "callsites": "^2.0.0",
-    "cross-spawn-async": "^2.2.5",
+    "cross-spawn": "^6.0.5",
     "file-position": "0.0.0",
     "lodash.partition": "^4.3.0",
     "normalize-newline": "^3.0.0",
